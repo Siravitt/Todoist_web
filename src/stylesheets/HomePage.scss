@@ -1,0 +1,59 @@
+@import '../stylesheets/index.scss';
+
+.home_container {
+    // width: 650px;
+    margin: auto;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .home_header {
+        padding-top: 2rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+
+        .topic_container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: last baseline;
+
+            .topic {
+                font-size: $font-medium;
+                font-weight: bold;
+            }
+            
+            .date {
+                color: $gray-dark;
+            }
+        }
+        
+    }
+
+    .add_task {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: $gray-dark;
+        font-size: $font-base;
+
+        .add_task_icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-primary {
+            background-color: $primary;
+        }
+
+        &:hover {
+            color: $primary;
+            cursor: pointer;
+        }
+    }
+}

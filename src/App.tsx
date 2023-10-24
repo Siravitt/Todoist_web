@@ -1,0 +1,13 @@
+import './stylesheets/App.scss'
+import Router from './routes/router'
+
+function App() {
+
+  return (
+    <>
+      <Router />
+    </>
+  )
+}
+
+export default App

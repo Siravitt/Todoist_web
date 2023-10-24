@@ -1,0 +1,42 @@
+@import '../stylesheets/index.scss';
+
+.header {
+    background: $primary;
+    padding: 0 1rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .header_left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .header_right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .profile_img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: $gray;
+            cursor: pointer;
+        }
+    }
+
+    .icon_btn {
+        padding: 0.1rem;
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        transition: background-color 0.25s;
+    }
+    .icon_btn:hover {
+        cursor: pointer;
+        background-color: $primary-hover;
+    }
+}

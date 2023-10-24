@@ -1,0 +1,57 @@
+@import './index.scss';
+
+.form_container {
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: 1px solid $gray-dark;
+    border-radius: 0.5rem;
+
+    .input_task_name {
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        font-size: medium;
+    }
+
+    .input_description {
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+    }
+
+    .btn_container {
+        font-size: $font-base;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.5rem;
+
+        .btn_cancel {
+            background-color: $gray-light;
+
+            &:hover {
+                background-color: $gray;
+            }
+        }
+        .btn_add_task {
+            background-color: $primary;
+            color: $white;
+
+            &:hover {
+                background-color: $primary-hover;
+            }
+        }
+
+        .btn_cancel, .btn_add_task {
+            padding: 0.5rem;
+            border-radius: $border-radius;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

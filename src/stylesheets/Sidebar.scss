@@ -1,0 +1,60 @@
+@import '../stylesheets//index.scss';
+
+.sidebar_container {
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    background-color: $gray-light;
+    height: 100%;
+    
+    .list {
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: $border-radius;
+        font-size: $font-small;
+        transition: background-color 0.25s;
+        
+        &:hover {
+            background-color: $gray;
+            cursor: pointer;
+        }
+        
+    }
+
+    .list-active {
+        background-color: $gray;
+    }
+}
+
+.fade_in {
+    animation: fade-in 0.5s;
+}
+
+.fade-out {
+    animation: fade-out 0.5s;
+}
+
+@keyframes fade-in {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 25%;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        width: 25%;
+        opacity: 1;
+    } to {
+        width: 0;
+        opacity: 0;
+    }
+}
