@@ -1,0 +1,49 @@
+@import './index.scss';
+
+.all_task_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .task_container {
+        display: flex;
+        gap: 1rem;
+    
+        .checkbox_container {
+            input[type="checkbox"] {
+                appearance: none;
+                margin: 0;
+                width: 1.25rem;
+                height: 1.25rem;
+                border: 1px solid $gray-dark;
+                border-radius: 50%;
+    
+                &:hover {
+                    background-color: $gray;
+                }
+    
+                &:checked {
+                    background-color: $gray-dark;
+                    transform-origin: bottom left;
+                }
+              }
+        }
+
+        .task_content_container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .task_description {
+                font-size: 12px;
+                color: $gray-dark;
+            }
+        }
+    }
+
+    .hr {
+        border: 0.75px solid $gray-dark;
+        opacity: 0.5;
+    }
+}
+

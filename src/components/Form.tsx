@@ -1,6 +1,7 @@
+import TodayIcon from '@mui/icons-material/Today';
 import { useState } from 'react';
 import '../stylesheets/Form.scss'
-import { Task } from '../contexts/TaskContext';
+import { TaskType } from '../contexts/TaskContext';
 import useTask from '../hooks/useTask';
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 
 function Form({ closeAddTask }: Props): JSX.Element {
     const { addNewTask } = useTask();
-    const [input, setInput] = useState<Task>({
+    const [input, setInput] = useState<TaskType>({
         taskName: '',
         description: ''
     });
@@ -19,29 +20,36 @@ function Form({ closeAddTask }: Props): JSX.Element {
     }
 
     const addTaskHandler = (): void => {
+        // need validate input
         addNewTask(input);
         closeAddTask();
     }
     return (
         <div className="form_container">
-            <input className='input_task_name' 
-                type="text" 
-                placeholder="Task name" 
-                name="taskName" 
-                value={input.taskName} 
-                onChange={changeInput} 
+            <input className='input_task_name'
+                type="text"
+                placeholder="Task name"
+                name="taskName"
+                value={input.taskName}
+                onChange={changeInput}
             />
-            <input className='input_description' 
-                type="text" 
-                placeholder="Description" 
-                name="description" 
-                value={input.description} 
-                onChange={changeInput} 
+            <input className='input_description'
+                type="text"
+                placeholder="Description"
+                name="description"
+                value={input.description}
+                onChange={changeInput}
             />
             <hr />
             <div className='btn_container'>
-                <div className='btn_cancel' onClick={closeAddTask}>Cancel</div>
-                <div className='btn_add_task' onClick={addTaskHandler}>Add task</div>
+                <div className='btn-date'>
+                    <TodayIcon fontSize='small'/>
+                    <div>Today</div>
+                </div>
+                <div className='add-cancel'>
+                    <div className='btn_cancel' onClick={closeAddTask}>Cancel</div>
+                    <div className='btn_add_task' onClick={addTaskHandler}>Add task</div>
+                </div>
             </div>
         </div>
     );

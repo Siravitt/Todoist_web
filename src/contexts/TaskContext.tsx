@@ -4,7 +4,7 @@ type Props = {
     children: string | JSX.Element | JSX.Element[]
 }
 
-type Task = {
+type TaskType = {
     taskName: string;
     description: string;
     // date: Date;
@@ -13,14 +13,14 @@ type Task = {
 }
 
 interface TaskContextType {
-    task: Task[];
-    addNewTask: (task: Task) => void;
+    task: TaskType[];
+    addNewTask: (task: TaskType) => void;
 }
 
 const TaskContext = createContext<TaskContextType | null>(null);
 
 function TaskContextProvider({ children }: Props) {
-    const [task, setTask] = useState<Task[]>([]);
+    const [task, setTask] = useState<TaskType[]>([]);
 
     console.log(task);
 
@@ -28,7 +28,7 @@ function TaskContextProvider({ children }: Props) {
     //     setTask([]);
     // }
 
-    const addNewTask = (newTask: Task): void => {
+    const addNewTask = (newTask: TaskType): void => {
         const cloneTask = structuredClone(task);
         cloneTask.push(newTask);
         setTask(cloneTask);
@@ -40,5 +40,5 @@ function TaskContextProvider({ children }: Props) {
 }
 
 export { TaskContext };
-export type { TaskContextType, Task };
+export type { TaskContextType, TaskType };
 export default TaskContextProvider;
