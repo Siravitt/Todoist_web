@@ -17,26 +17,21 @@ interface TaskContextType {
     addNewTask: (task: TaskType) => void;
 }
 
-const TaskContext = createContext<TaskContextType | null>(null);
+const TaskContext = createContext<TaskContextType>({} as TaskContextType);
 
 function TaskContextProvider({ children }: Props) {
     const [task, setTask] = useState<TaskType[]>([]);
 
-    console.log(task);
-
-    // const getAllTask = ():void => {
-    //     setTask([]);
-    // }
-
-    const addNewTask = (newTask: TaskType): void => {
-        const cloneTask = structuredClone(task);
-        cloneTask.push(newTask);
-        setTask(cloneTask);
+    const addNewTask = (addTask: TaskType): void => {
+        const newTask = [...task, addTask];
+        setTask(newTask);
     }
 
-    return <TaskContext.Provider value={{ task, addNewTask }}>
-        {children}
-    </TaskContext.Provider>
+    return (
+        <TaskContext.Provider value={{ task, addNewTask }}>
+            {children}
+        </TaskContext.Provider>
+    );
 }
 
 export { TaskContext };

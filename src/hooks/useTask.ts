@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TaskContext, TaskContextType } from "../contexts/TaskContext";
 
-function useTask(): TaskContextType | null {
+function useTask(): TaskContextType {
     return useContext(TaskContext);
 }
 
